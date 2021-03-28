@@ -1,0 +1,60 @@
+<div class="page-wrapper">
+    <div class="content">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <h4 class="page-title">Add Specialites</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <form [formGroup]="form">
+                    {{ form.valid}}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Specialites ID</label>
+                                <input class="form-control" type="text" value="APT-0001" readonly="" [(ngModel)]="specialite.id">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Specialite Name</label>
+                                <input class="form-control" type="text"  [(ngModel)]="specialite.nomspecialite" formControlName="nomspecialite">
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Specialite Name</label>
+                                <select class="select" class="form-control" [(ngModel)]="specialite.nomspecialite" formControlName="nomspecialite" >
+                                    <option>Select</option>
+                                    <option>Gynecologist</option>
+                                    <option>Psychiatrist</option>
+                                    <option>Cardiologist</option>
+                                    <option>Urologist</option>
+                                    <option>Ophthalmologist</option>
+                                    <option>Dentist</option>
+                                    <option>Oncologist</option>
+                                    <option>Neurologist</option>
+                                    <option>General Surgery</option>
+                                    <option>Radiologist </option>
+                                    <option>Pediatrics</option>
+                                    <option>Physical Therapist</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="m-t-20 text-center">
+                        <button class="btn btn-primary submit-btn" (click)="addSpecialite()" [disabled]="!form.valid">Create Specialite</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+ 
+</div>

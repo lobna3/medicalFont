@@ -1,0 +1,30 @@
+<div class="page-wrapper">
+    <div class="content">
+        <div class="row">
+            <div class="col-sm-12">
+                <h4 class="page-title">View Message</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card-box">
+                   
+                    <div class="mail-attachments">
+                        <p><i class="fa fa-paperclip"></i> 2 Attachments - <a href="#">View all</a> | <a href="#">Download all</a></p>
+                        <ul class="attachments clearfix text-center">
+                            <li *ngFor="let item of doctors">
+                                <div class="attach-file"><i class="fa fa-folder-o"></i></div>
+                                <div class="attach-info">
+                                    <a [routerLink]="['/medical/shared','doctor',item.id]" class="attach-filename">{{item.firstname}}</a>
+                                    <div class="attach-fileize"> 842 KB</div>
+                                </div>
+                          
+                        </ul>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div>

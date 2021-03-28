@@ -1,0 +1,35 @@
+<div class="main-wrapper account-wrapper">
+    <div class="account-page">
+        <div class="account-center">
+            <div class="account-box">
+                <form [formGroup]="form">
+                    {{ form.valid}}
+                    <div class="account-logo">
+                        <a href="index-2.html"><img src="" alt=""></a>
+                    </div>
+                    <div class="form-group">
+                        <label>Username or Email <small style="color: red;" *ngIf="user.email && form.get('email').errors">Invalid Format email</small></label>
+                        <input type="text" autofocus="" class="form-control" [(ngModel)]="user.email" required 
+                        formControlName="email">
+                    </div>
+                    <div class="form-group">
+                        <label>Password
+                            <small style="color: red;" *ngIf="user.password && form.get('password').errors">password shoud had at least 8 caracters</small>
+                        </label>
+                        <input type="password" class="form-control" [(ngModel)]="user.password" required 
+                        formControlName="password">
+                    </div>
+                    <div class="form-group text-right">
+                        <a href="forgot-password.html">Forgot your password?</a>
+                    </div>
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-danger account-btn" (click)="login()"  [disabled]="!form.valid">Login</button>
+                    </div>
+                    <div class="text-center register-link">
+                        Don’t have an account? <a [routerLink]="['/register']">Register Now</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

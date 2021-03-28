@@ -1,0 +1,138 @@
+<div class="page-wrapper">
+    <div class="content">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <h4 class="page-title">Add Doctor</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <form [formGroup]="form">
+                    {{ form.valid}}
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>First Name <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" [(ngModel)]="user.firstname" required 
+                                formControlName="firstname">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="text" class="form-control" [(ngModel)]="user.lastname"formControlName="lastname">
+                            </div>
+                        </div>
+                       
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Email<span class="text-danger">*</span> <small style="color: red;" *ngIf="user.email && form.get('email').errors">Invalid Format email</small></label>
+                                <input type="email" class="form-control "  email="true" [(ngModel)]="user.email" formControlName="email" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Password
+                                    <small style="color: red;" *ngIf="user.password && form.get('password').errors">password shoud had at least 8 caracters</small>
+                                </label>
+
+                                <input type="password" class="form-control" required minlength="8" [(ngModel)]="user.password" formControlName="password">
+                            </div>
+                        </div>
+                     
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>DateNaissance:</label>
+                                <input type="date" class="form-control"  [(ngModel)]="user.datenaissance" formControlName="datenaissance">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group gender-select">
+                                <label class="gen-label">Gender:</label>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="radio"  value="homme" class="form-check-input" [(ngModel)]="user.genre" formControlName="genre">Male
+                                    </label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="radio"  value="femme"  class="form-check-input" [(ngModel)]="user.genre" formControlName="genre">Female
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Address</label>
+                                        <input type="text" class="form-control" [(ngModel)]="user.adress" formControlName="adress">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-3">
+                                    <div class="form-group">
+                                        <label>Country</label>
+                                        <select class="form-control select" [(ngModel)]="user.country" formControlName="country">
+                                            <option>USA</option>
+                                            <option>United Kingdom</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-3">
+                                    <div class="form-group">
+                                        <label>City</label>
+                                        <input type="text" class="form-control" [(ngModel)]="user.city" formControlName="city">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-3">
+                                    <div class="form-group">
+                                        <label>Specialites</label>
+                                        <select class="form-control select" [(ngModel)]="user.specialites" formControlName="state" multiple>
+                                            <option *ngFor="let s of specialite" [value]="s.id">{{s.nomspecialite}}</option>
+                                       
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-3">
+                                    <div class="form-group">
+                                        <label>Postal Code</label>
+                                        <input type="text" class="form-control" [(ngModel)]="user.codePostal" formControlName="codePostal">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Phone </label>
+                                <input class="form-control" type="text" [(ngModel)]="user.phone" formControlName="phone">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Avatar</label>
+                                <div class="profile-upload">
+                                    <div class="upload-img">
+                                        <img alt="" src="assets/img/user.jpg">
+                                    </div>
+                                    <div class="upload-input">
+                                        <input type="file" class="form-control" (change)="upload($event)" formControlName="image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Short Biography</label>
+                        <textarea class="form-control" rows="3" cols="30" [(ngModel)]="user.shortBiography" formControlName="shortBiography"></textarea>
+                    </div>
+                   
+                    <div class="m-t-20 text-center">
+                        <button class="btn btn-primary submit-btn" (click)="addDoctor()" [disabled]="!form.valid">Create Doctor</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  
+</div>
+
