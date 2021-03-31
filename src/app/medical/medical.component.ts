@@ -15,8 +15,11 @@ export class MedicalComponent implements OnInit {
   ngOnInit(): void {
     if(this.user.role == 'doctor'){
    
-      this.menu = this.menu_doctor,this.menu_folder;
-      
+     this.menu=this.menu_doctor
+     this.menu=this.menu_scretary
+     this.menu=this.menu_patient
+     this.menu=this.menu_appointment
+     this.menu=this.menu_folder
     
    
     }else if( this.user.role == 'patient'){
@@ -33,8 +36,6 @@ export class MedicalComponent implements OnInit {
     } else{
       this.menu = this.menu_admin;
       this.menu = this.menu_appointment;
-    
-     
       this.menu = this.menu_specialite;
       this.menu = this.menu_folder;
       this.menu = this.menu_email;
