@@ -13,7 +13,7 @@
                             <div class="row">
                                 <div class="col-sm-9">
                                     <div class="text-ellipsis m-b-10">
-                                        <span class="mail-view-title">HRMS Bootstrap Admin Template</span>
+                                        <span class="mail-view-title"> Admin </span>
                                     </div>
                                 </div>
                                 <div class="col-sm-3">
@@ -29,10 +29,10 @@
                             </div>
                             <div class="sender-info">
                                 <div class="sender-img">
-                                    <img width="40" alt="" src="assets/img/user.jpg" class="rounded-circle">
+                                    <img width="40" alt="" [src]="doctor.image ? server+doctor.image : 'assets/img/user.jpg'" class="avatar">
                                 </div>
                                 <div class="receiver-details float-left">
-                                    <span class="sender-name">John Doe (johnjoe@example.com)</span>
+                                    <span class="sender-name">{{doctor.firstname}} {{doctor.lastname}} {{doctor.email}} </span>
                                     <span class="receiver-name">
                                         to <span>me</span>, <span>Richard</span>, <span>Paul</span>
                                     </span>
@@ -61,27 +61,7 @@
                                     <div class="attach-fileize"> 842 KB</div>
                                 </div>
                             </li>
-                            <li>
-                                <div class="attach-file"><i class="fa fa-file-word-o"></i></div>
-                                <div class="attach-info">
-                                    <a href="#" class="attach-filename">documentation.docx</a>
-                                    <div class="attach-fileize"> 2,305 KB</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="attach-file"><img src="assets/img/placeholder.jpg" alt="Attachment"></div>
-                                <div class="attach-info">
-                                    <a href="#" class="attach-filename">webdesign.png</a>
-                                    <div class="attach-fileize"> 1.42 MB</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="attach-file"><img src="assets/img/placeholder.jpg" alt="Attachment"></div>
-                                <div class="attach-info">
-                                    <a href="#" class="attach-filename">webdevelopment.png</a>
-                                    <div class="attach-fileize"> 1.1 MB</div>
-                                </div>
-                            </li>
+                         
                         </ul>
                     </div>
                     <div class="mailview-footer">
@@ -102,7 +82,7 @@
         </div>
 
 
-        <!--  https://github.com/lobna3/medicalFont -->
+     
     </div>
   
 </div>

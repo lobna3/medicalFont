@@ -18,4 +18,11 @@ export class DocumentsService {
     return this.httpclient.post(this.url+'/add-document',body)
 }
 
+getById(id){
+  return this.httpclient.get(this.url+'/documents/'+id)
+ }
+ getAll(){
+  return this.httpclient.get(this.url+'/documents')
+}
+
 }
