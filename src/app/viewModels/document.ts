@@ -1,9 +1,10 @@
 export class Document {
     id:number;
     designation:string;
-    date:string;
+    date:any;
     sector_id:number;
     patient_id:number;
     doctor_id:number;
+    file : string
 
 }

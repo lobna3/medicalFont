@@ -14,8 +14,12 @@
                         <ul class="attachments clearfix text-center">
                             <li *ngFor="let item of doctors">
                                 <div class="attach-file"><i class="fa fa-folder-o"></i></div>
+                                <div class="doctor-img">
+                                    <a class="avatar" ><img alt="" [src]="item.image ? server+item.image : 'assets/img/user.jpg'" ></a>
+                                </div>
+                     
                                 <div class="attach-info">
-                                    <a [routerLink]="['/medical/shared','doctor',item.id]" class="attach-filename">{{item.firstname}}</a>
+                                    <a [routerLink]="['/medical/shared','doctor',item.id]" class="attach-filename">{{item.firstname}} {{item.lastname}}</a>
                                     <div class="attach-fileize"> 842 KB</div>
                                 </div>
                           

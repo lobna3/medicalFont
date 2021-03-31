@@ -16,6 +16,7 @@ export class FoldersComponent implements OnInit {
   ngOnInit(): void {
     this.allDocors();
   }
+  server="http://localhost/blog/storage/app/"
   allDocors() {
     this.api.getAll()
       .subscribe((result: User[]) => {
