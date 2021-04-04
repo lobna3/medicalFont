@@ -1,3 +1,6 @@
+import { Sector } from "./sector";
+import { User } from "./user";
+
 export class Document {
     id:number;
     designation:string;
@@ -7,6 +10,10 @@ export class Document {
     doctor_id:number;
     file : string
     type : string;
-    size : number
+    size : number;
+
+    patient? : any;
+    doctor?: User;
+    sector?: Sector;
 
 }

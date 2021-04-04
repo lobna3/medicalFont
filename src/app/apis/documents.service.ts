@@ -25,5 +25,13 @@ getById(id){
  getAll(id){
   return this.httpclient.get(this.url+'/documents/'+id)
 }
+getAllPatient(id){
+  return this.httpclient.get(this.url+'/documentsP/'+id)
+}
+
+
+update(body){
+  return this.httpclient.put(this.url+'/edit-document',body)
+}
 
 }

@@ -13,24 +13,24 @@
                         <p><i class="fa fa-paperclip"></i> 2 Attachments - <a href="#">View all</a> | <a href="#">Download all</a></p>
                         <ul class="attachments clearfix text-center">
                             <li>
-                                <div class="attach-file" [routerLink]="['/medical/shared','doctor',1]"><i class="fa fa-folder-o"></i></div>
+                                <div class="attach-file" [routerLink]="['/medical/shared','patient',0]"><i class="fa fa-folder-o"></i></div>
                                 <div class="doctor-img">
                                     <a class="avatar" ><img alt="" [src]=" 'assets/img/user.jpg'" ></a>
                                 </div>
                      
                                 <div class="attach-info">
-                                    <a [routerLink]="['/medical/shared','doctor', 1]" class="attach-filename">Non classé</a>
+                                    <a [routerLink]="['/medical/shared','patient', 0]" class="attach-filename">Non classé</a>
                                     
                                 </div>
                           </li>
                             <li *ngFor="let item of doctors">
-                                <div class="attach-file" [routerLink]="['/medical/shared','doctor',item.id]"><i class="fa fa-folder-o"></i></div>
+                                <div class="attach-file" [routerLink]="['/medical/shared','patient',item.id]"><i class="fa fa-folder-o"></i></div>
                                 <div class="doctor-img">
                                     <a class="avatar" ><img alt="" [src]="item.image ? server+item.image : 'assets/img/user.jpg'" ></a>
                                 </div>
                      
                                 <div class="attach-info">
-                                    <a [routerLink]="['/medical/shared','doctor',item.id]" class="attach-filename">{{item.firstname}} {{item.lastname}}</a>
+                                    <a [routerLink]="['/medical/shared','patient',item.id]" class="attach-filename">{{item.firstname}} {{item.lastname}}</a>
                                     
                                 </div>
                           </li>

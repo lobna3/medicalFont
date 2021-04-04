@@ -29,10 +29,10 @@
                             </div>
                             <div class="sender-info">
                                 <div class="sender-img">
-                                    <img width="40" alt="" [src]="doctor && doctor.image ? server+doctor.image : 'assets/img/user.jpg'" class="avatar">
+                                    <img width="40" alt="" [src]="user && user.image ? server+user.image : 'assets/img/user.jpg'" class="avatar">
                                 </div>
                                 <div class="receiver-details float-left">
-                                    <span class="sender-name">{{doctor?.firstname}} {{doctor?.lastname}} {{doctor?.email}} </span>
+                                    <span class="sender-name">{{user?.firstname}} {{user?.lastname}} {{user?.email}} </span>
                                     <span class="receiver-name">
                                         to <span>me</span>, <span>Richard</span>, <span>Paul</span>
                                     </span>
@@ -61,6 +61,7 @@
                                         <span  class="fa fa-file-picture-o"></span>
 
                                     </ng-template>
+                                    <span>{{item.patient?.user?.firstname}}</span>
                                   <!--   <img class="fa fa-file-pdf-o " [src]="item.file ? server+item.file : 'assets/img/user.jpg'">
                                  -->
                                 </div>
@@ -73,7 +74,7 @@
                                         <ng-template #show_kb>
                                             {{(item.size / 1024) | number}} KB
                                         </ng-template>
-                                        
+                                        <button type="button" class="btn btn-white" (click)="showModal(item)"><i class="fa fa-share"></i> </button>
                                         </div>
                                 </div>
                             </li>
@@ -102,3 +103,24 @@
     </div>
   
 </div>
+
+<!-- Modal -->
+<div *ngIf="show" class="modal fade show" style="display: block;" id="exampleModal" aria-labelledby="exampleModalLabel" >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" (click)="hideModal()" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+
+          <!-- [(ngModel)]="selected_file.patient_id" -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="hideModal()">Close</button>
+          <button type="button" class="btn btn-primary" [disabled]="!selected_file.patient_id"  (click)="updateFile()">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
