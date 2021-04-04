@@ -42,6 +42,8 @@ import { InboxComponent } from './email/inbox/inbox.component';
 import { MailViewComponent } from './email/mail-view/mail-view.component';
 import { FoldersComponent } from './medical/folders/folders.component';
 import { SharedComponent } from './medical/shared/shared.component';
+import { FolderPatientComponent } from './medical/folder-patient/folder-patient.component';
+
 
 
 
@@ -84,6 +86,8 @@ import { SharedComponent } from './medical/shared/shared.component';
     MailViewComponent,
     FoldersComponent,
     SharedComponent,
+    FolderPatientComponent,
+    
  
    
   ],

@@ -11,6 +11,7 @@ export class DocumentsService {
   }
 
   upload(body : FormData){
+    console.log(body)
     return this.httpclient.post(this.url+'/uploadDocument' , body)
   }
 
@@ -19,10 +20,10 @@ export class DocumentsService {
 }
 
 getById(id){
-  return this.httpclient.get(this.url+'/documents/'+id)
+  return this.httpclient.get(this.url+'/document/'+id)
  }
- getAll(){
-  return this.httpclient.get(this.url+'/documents')
+ getAll(id){
+  return this.httpclient.get(this.url+'/documents/'+id)
 }
 
 }

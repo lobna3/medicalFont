@@ -114,10 +114,10 @@
             <div id="sidebar-menu" class="sidebar-menu">
                 <ul>
                     <li class="menu-title">Main</li>
-                    <li class="active" *ngFor="let element of menu">
+                    <li  *ngFor="let element of menu">
                         <a [routerLink]="[element.route]"><i class="{{element.icon}}"></i> <span>{{element.nom}}</span></a>
                     </li>
-                    <li >
+                   <!--  <li >
                         <a [routerLink]="['/medical']"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
                     </li>
                     <li >
@@ -161,7 +161,7 @@
                         <a [routerLink]="['./chat']"><i class="fa fa-comments"></i> <span>Chat</span> <span class="badge badge-pill bg-primary float-right">5</span></a>
                     </li>
                   
-                   
+                    -->
                    
                     
                    

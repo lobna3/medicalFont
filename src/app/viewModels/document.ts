@@ -6,5 +6,7 @@ export class Document {
     patient_id:number;
     doctor_id:number;
     file : string
+    type : string;
+    size : number
 
 }

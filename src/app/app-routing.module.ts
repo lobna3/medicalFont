@@ -37,6 +37,8 @@ import { InboxComponent } from './email/inbox/inbox.component';
 import { MailViewComponent } from './email/mail-view/mail-view.component';
 import { FoldersComponent } from './medical/folders/folders.component';
 import { SharedComponent } from './medical/shared/shared.component';
+import { FolderPatientComponent } from './medical/folder-patient/folder-patient.component';
+
 
 
 const routes: Routes = [
@@ -84,9 +86,14 @@ const routes: Routes = [
         component:FoldersComponent, 
       } ,
       {
+        path:'folder-patient',
+        component:FolderPatientComponent, 
+      } ,
+      {
         path:'shared/:type/:id',
         component:SharedComponent, 
       } ,
+      
       {
         path:'doctors',
         component:DoctorsComponent, 

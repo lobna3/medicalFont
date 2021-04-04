@@ -29,10 +29,10 @@
                             </div>
                             <div class="sender-info">
                                 <div class="sender-img">
-                                    <img width="40" alt="" [src]="doctor.image ? server+doctor.image : 'assets/img/user.jpg'" class="avatar">
+                                    <img width="40" alt="" [src]="doctor && doctor.image ? server+doctor.image : 'assets/img/user.jpg'" class="avatar">
                                 </div>
                                 <div class="receiver-details float-left">
-                                    <span class="sender-name">{{doctor.firstname}} {{doctor.lastname}} {{doctor.email}} </span>
+                                    <span class="sender-name">{{doctor?.firstname}} {{doctor?.lastname}} {{doctor?.email}} </span>
                                     <span class="receiver-name">
                                         to <span>me</span>, <span>Richard</span>, <span>Paul</span>
                                     </span>
@@ -46,19 +46,35 @@
                         <div class="mailview-inner">
                             <p>Hello Richard,</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            
                             <p>Thanks,
                             <br> John Doe</p>
                         </div>
                     </div>
                     <div class="mail-attachments">
                         <p><i class="fa fa-paperclip"></i> 2 Attachments - <a href="#">View all</a> | <a href="#">Download all</a></p>
-                        <ul class="attachments clearfix text-center">
-                            <li>
-                                <div class="attach-file"><i class="fa fa-file-pdf-o"></i></div>
+                        <ul class="attachments clearfix text-center" >
+                            <li *ngFor="let item of documents ">
+                                <div class="attach-file">
+                                    <span *ngIf="item.type.indexOf('pdf') != -1 ; else picture" class="fa fa-file-pdf-o"></span>
+                                    <ng-template #picture>
+                                        <span  class="fa fa-file-picture-o"></span>
+
+                                    </ng-template>
+                                  <!--   <img class="fa fa-file-pdf-o " [src]="item.file ? server+item.file : 'assets/img/user.jpg'">
+                                 -->
+                                </div>
                                 <div class="attach-info">
-                                    <a href="#" class="attach-filename">daily_meeting.pdf</a>
-                                    <div class="attach-fileize"> 842 KB</div>
+                                    <a [href]="server+item.file" target="_blank" class="attach-filename">{{item.designation}}</a>
+                                    <div class="attach-fileize"> 
+                                        <span *ngIf="item.size && item.size > 1024000 ; else show_kb">
+                                            {{(item.size / (1024*1024)) | number}} MB
+                                        </span>
+                                        <ng-template #show_kb>
+                                            {{(item.size / 1024) | number}} KB
+                                        </ng-template>
+                                        
+                                        </div>
                                 </div>
                             </li>
                          

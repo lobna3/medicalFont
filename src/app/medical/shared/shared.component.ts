@@ -16,11 +16,14 @@ export class SharedComponent implements OnInit {
 
   constructor(private toastr: ToastrService,private api: DocumentsService, private route: ActivatedRoute,private apii:AuthService,private apiii:CrudService) { }
   id = this.route.snapshot.params['id']
- id1=this.route.snapshot.params['id1']
+  id1=this.route.snapshot.params['id1']
   doctor: User
   laboratorist: User
   document: Document
+  documents: Document[]
+
   ngOnInit(): void {
+    this.allDocument()
     this.getIdDocors(this.id)
     this.getIdLaboratorist(this.id1)
     this.getIdDocument(this.id)
@@ -76,11 +79,27 @@ console.log(file)
         d.designation = file.name;
         d.doctor_id = this.id;
         d.file = path.path
+        d.size = file.size;
+        d.type = file.type
 
         console.log(d)
-        this.api.create(d).subscribe(()=>{})
+        this.api.create(d).subscribe(()=>{
+          this.allDocument()
+        })
       })
 
     }
   }
+  allDocument() {
+    this.api.getAll(this.id)
+      .subscribe((result: Document[]) => {
+        this.documents = result
+        console.log(result)
+      }, (error: any) => {
+        console.log(error)
+        this.toastr.error(error.error.msg);
+      })
+
+  }
+
 }
