@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+
 import { DocumentsService } from 'src/app/apis/documents.service';
 import { Document } from 'src/app/viewModels/document';
 import { User } from 'src/app/viewModels/user';
@@ -18,11 +22,22 @@ export class SharedComponent implements OnInit {
   id = this.route.snapshot.params['id']
   type = this.route.snapshot.params['type']
   user: User
+  users: User[]
   document: Document
   documents: Document[]
-
+  form:FormGroup
   auth = JSON.parse(localStorage.getItem('user'))
   ngOnInit(): void {
+    this.apiii.getAllP().subscribe((result:User[])=>{
+      this.users= result
+    })
+    this.form=new FormGroup({
+
+      'patient_id': new FormControl(Validators.required),
+   
+     
+      
+    });
     this.allDocument()
     if(this.type=='doctor'){
       this.getIdDocors(this.id)

@@ -103,15 +103,25 @@
           <button type="button" class="btn-close" (click)="hideModal()" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          ...
-
           
+          
+            {{form.valid}}
+            <div class="form-group">
+                <label>Patient Name</label>
+                <select class="form-control select" [(ngModel)]="selected_file.patient_id" >
+                    <option *ngFor="let s of users" [value]="s.id">{{s.firstname}} {{s.lastname}}</option>
+                   
+                </select>
+            </div>
+         
+      
           <!-- [(ngModel)]="selected_file.patient_id" -->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" (click)="hideModal()">Close</button>
           <button type="button" class="btn btn-primary" [disabled]="!selected_file.patient_id"  (click)="updateFile()">Save changes</button>
         </div>
+    
       </div>
     </div>
   </div>
