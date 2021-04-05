@@ -54,11 +54,12 @@
                                         <span  class="fa fa-file-picture-o"></span>
 
                                     </ng-template>
-                                    <span>{{item.patient?.user?.firstname}}</span>
+                                   
                                   <!--   <img class="fa fa-file-pdf-o " [src]="item.file ? server+item.file : 'assets/img/user.jpg'">
                                  -->
                                 </div>
                                 <div class="attach-info">
+                                    <span class="attach-filename">{{item.patient?.user?.firstname}} {{item.patient?.user?.lastname}}</span> <br>
                                     <a [href]="server+item.file" target="_blank" class="attach-filename">{{item.designation}}</a>
                                     <div class="attach-fileize"> 
                                         <span *ngIf="item.size && item.size > 1024000 ; else show_kb">
