@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/apis/auth.service';
+import { User } from 'src/app/viewModels/user';
 import { ThisReceiver } from '@angular/compiler';
 
 @Component({
@@ -9,7 +13,7 @@ import { ThisReceiver } from '@angular/compiler';
 export class MedicalComponent implements OnInit {
 
   constructor() { }
-
+  server="http://localhost/blog/storage/app/"
   user =JSON.parse(localStorage.getItem('user'))
   menu 
   ngOnInit(): void {
@@ -51,11 +55,18 @@ export class MedicalComponent implements OnInit {
       icon : 'fa fa-user',
       route : '/medical/laboratorist'
     },
+
     {
       nom :  'Secretary',
       icon : 'fa fa-user',
       route : '/medical/scretarys'
-    }, {
+    },
+    {
+      nom :  'Patients',
+      icon : 'fa fa-wheelchair',
+      route : '/medical/patients'
+    }, 
+     {
       nom :  'Specialites',
       icon : 'fa fa-cube',
       route : '/medical/specialites'
@@ -150,10 +161,21 @@ export class MedicalComponent implements OnInit {
 
   menu_patient = [
     {
-      nom :  'Patients',
-      icon : 'fa fa-wheelchair',
-      route : '/medical/patients'
-    },   {
+      nom :  'Dashboard',
+      icon : 'fa fa-dashboard',
+      route : '/medical'
+    },
+     
+    {
+      nom :  'Folders',
+      icon : 'fa fa-cube',
+      route : '/medical/folders'
+    },  {
+      nom :  'Appointments',
+      icon : 'fa fa-calendar',
+      route : '/medical/appointments'
+    }, 
+    {
       nom :  'Email',
       icon : 'fa fa-envelope',
       route : '/medical/email'
