@@ -183,7 +183,8 @@ export class MedicalComponent implements OnInit {
       nom :  'Chat',
       icon : 'fa fa-comments',
       route : '/medical/chat'
-    }
+    },
+    
   ]
 
 
