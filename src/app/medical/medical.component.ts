@@ -81,11 +81,11 @@ export class MedicalComponent implements OnInit {
     }, {
       nom :  'Sectors',
       icon : 'fa fa-hospital-o',
-      route : '/medical/appointments'
+      route : '/medical/sectors'
     },   {
       nom :  'Email',
       icon : 'fa fa-envelope',
-      route : '/medical/email/inbox'
+      route : '/email/inbox'
     },{
       nom :  'Chat',
       icon : 'fa fa-comments',
@@ -128,7 +128,7 @@ export class MedicalComponent implements OnInit {
     },   {
       nom :  'Email',
       icon : 'fa fa-envelope',
-      route : '/medical/email'
+      route : '/email/inbox'
     },{
       nom :  'Chat',
       icon : 'fa fa-comments',
@@ -151,7 +151,7 @@ export class MedicalComponent implements OnInit {
     },   {
       nom :  'Email',
       icon : 'fa fa-envelope',
-      route : '/medical/email'
+      route : '/email/inbox'
     },{
       nom :  'Chat',
       icon : 'fa fa-comments',
@@ -178,7 +178,7 @@ export class MedicalComponent implements OnInit {
     {
       nom :  'Email',
       icon : 'fa fa-envelope',
-      route : '/medical/email'
+      route : '/email/inbox'
     },{
       nom :  'Chat',
       icon : 'fa fa-comments',
