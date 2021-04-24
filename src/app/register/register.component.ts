@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
     this.api.register(this.user)
     .subscribe((result : any)=>{
       console.log(result) 
-      this.toastr.success('Hello world!', 'Toastr fun!');
+      this.toastr.success('Hello world!', 'Login fun!');
      this.router.navigate(['/login']);
     },(error:any)=>{
       console.log(error)
