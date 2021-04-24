@@ -40,6 +40,7 @@ import { SharedComponent } from './medical/shared/shared.component';
 import { FolderPatientComponent } from './medical/folder-patient/folder-patient.component';
 import { DoctorsListComponent } from './medical/doctors-list/doctors-list.component';
 import { DoctorProfileComponent } from './medical/doctorsList/doctor-profile/doctor-profile.component';
+import { FolderIdComponent } from './medical/folder-id/folder-id.component';
 
 
 
@@ -90,6 +91,10 @@ const routes: Routes = [
       {
         path:'folder-patient',
         component:FolderPatientComponent, 
+      } ,
+      {
+        path:'folder-id/:id',
+        component:FolderIdComponent, 
       } ,
       {
         path:'shared/:type/:id',

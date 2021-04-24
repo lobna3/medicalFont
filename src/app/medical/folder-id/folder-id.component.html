@@ -1,0 +1,35 @@
+<div class="page-wrapper">
+    <div class="content">
+        <div class="row">
+            <div class="col-sm-12">
+                <h4 class="page-title">View Folders</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card-box">
+                   
+                    <div class="mail-attachments">
+                        <p><i class="fa fa-paperclip"></i> 2 Attachments - <a href="#">View all</a> | <a href="#">Download all</a></p>
+                        <ul class="attachments clearfix text-center">
+                            
+                            <li>
+                                <div class="attach-file" [routerLink]="['/medical/shared','patient',patients.id]"><i class="fa fa-folder-o"></i></div>
+                                <div class="doctor-img">
+                                    <a class="avatar" ><img alt="" [src]="patients.image ? server+patients.image : 'assets/img/user.jpg'" ></a>
+                                </div>
+                     
+                                <div class="attach-info">
+                                    <a [routerLink]="['/medical/shared','patient',patients.id]" class="attach-filename">{{patients.firstname}} {{patients.lastname}}</a>
+                                    
+                                </div>
+                          </li>
+                        </ul>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div>
