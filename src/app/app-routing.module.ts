@@ -38,6 +38,7 @@ import { MailViewComponent } from './email/mail-view/mail-view.component';
 import { FoldersComponent } from './medical/folders/folders.component';
 import { SharedComponent } from './medical/shared/shared.component';
 import { FolderPatientComponent } from './medical/folder-patient/folder-patient.component';
+import { DoctorsListComponent } from './medical/doctors-list/doctors-list.component';
 
 
 
@@ -199,6 +200,11 @@ const routes: Routes = [
          { 
           path:'edit-scretary',
           component:EditScretaryComponent, 
+         },
+
+         { 
+          path:'doctors-list',
+          component:DoctorsListComponent, 
          },
     
       

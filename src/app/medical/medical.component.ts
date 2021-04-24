@@ -165,6 +165,11 @@ export class MedicalComponent implements OnInit {
       icon : 'fa fa-dashboard',
       route : '/medical'
     },
+    {
+      nom :  'Doctor',
+      icon : 'fa fa-user-md',
+      route : '/medical/doctors-list'
+    },
      
     {
       nom :  'Folders',
