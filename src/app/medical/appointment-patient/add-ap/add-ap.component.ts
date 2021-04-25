@@ -41,8 +41,8 @@ export class AddApComponent implements OnInit {
       'appointment_time': new FormControl('',Validators.required),
       'appointment_date': new FormControl(''),
     
-      'doctor_id': new FormControl(this.auth.id,Validators.required),
-      'patient_id': new FormControl('',Validators.required),
+      'doctor_id': new FormControl('',Validators.required),
+      'patient_id': new FormControl(this.auth.id,Validators.required),
       
       'note': new FormControl(''),
        
@@ -68,7 +68,7 @@ export class AddApComponent implements OnInit {
   }
   selectPatient(event){
     let id= event.target.value;
-    let patient= this.users.find((p)=>p.id==id)
+    let patient= this.user.find((p)=>p.id==id)
     console.log(patient)
     if(patient){
    

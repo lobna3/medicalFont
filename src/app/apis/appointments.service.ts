@@ -32,4 +32,9 @@ getByIdD(){
   console.log(this.user.id)
   return this.httpclient.get(this.url+'/appointmentsd/'+this.user.id)
 }
+
+getByIdP(){
+  console.log(this.user.id)
+  return this.httpclient.get(this.url+'/appointmentsp/'+this.user.id)
+}
 }

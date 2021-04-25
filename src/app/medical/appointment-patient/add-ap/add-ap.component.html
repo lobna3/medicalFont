@@ -13,9 +13,9 @@
                        
                         <div class="col-md-6">
                             <div class="form-group" >
-                                <label>Patient Name</label>
-                                <select class="form-control select"  formControlName="patient_id" (change)='selectPatient($event)'>
-                                    <option *ngFor="let s of users" [value]="s.id">{{s.firstname}} {{s.lastname}}</option>
+                                <label>Doctor Name</label>
+                                <select class="form-control select"  formControlName="doctor_id" (change)='selectPatient($event)'>
+                                    <option *ngFor="let s of user" [value]="s.id">{{s.firstname}} {{s.lastname}}</option>
                                    
                                 </select>
                             </div>
