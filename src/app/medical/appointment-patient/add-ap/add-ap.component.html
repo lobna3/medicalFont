@@ -1,1 +1,67 @@
-<p>add-ap works!</p>
+<div class="page-wrapper">
+    <div class="content">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <h4 class="page-title">Add Appointment</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <form [formGroup]="form">
+                    {{form.valid}}
+                    <div class="row">
+                       
+                        <div class="col-md-6">
+                            <div class="form-group" >
+                                <label>Patient Name</label>
+                                <select class="form-control select"  formControlName="patient_id" (change)='selectPatient($event)'>
+                                    <option *ngFor="let s of users" [value]="s.id">{{s.firstname}} {{s.lastname}}</option>
+                                   
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                  
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Date</label>
+                                
+                                    <input type="date" class="form-control "  formControlName="appointment_date">
+                               
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Time</label>
+                               
+                                    <input type="time" class="form-control"   formControlName="appointment_time">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                       
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Patient Phone Number</label>
+                                <input class="form-control" type="text"formControlName="phone" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea cols="30" rows="4" class="form-control"  formControlName="note" ></textarea>
+                    </div>
+                   
+                    <div class="m-t-20 text-center">
+                        <button class="btn btn-primary submit-btn" (click)="addA()" [disabled]="!form.valid">Create Appointment</button>
+                    </div>
+                </form>
+                
+
+            </div>
+        </div>
+    </div>
+   
+</div>
