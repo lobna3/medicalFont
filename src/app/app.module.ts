@@ -47,6 +47,8 @@ import { DoctorsListComponent } from './medical/doctors-list/doctors-list.compon
 import { DoctorProfileComponent } from './medical/doctorsList/doctor-profile/doctor-profile.component';
 import { FolderIdComponent } from './medical/folder-id/folder-id.component';
 import { SchedulerModule } from '@progress/kendo-angular-scheduler';
+import { TreeViewModule } from '@progress/kendo-angular-treeview';
+
 
 
 
@@ -106,7 +108,7 @@ import { SchedulerModule } from '@progress/kendo-angular-scheduler';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(), SchedulerModule, // ToastrModule added
+    ToastrModule.forRoot(), SchedulerModule, TreeViewModule, // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent]
