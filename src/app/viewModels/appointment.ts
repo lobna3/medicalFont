@@ -8,6 +8,7 @@ export class Appointment {
     note: string;
     phone: string;
     doctor : any
+    patient: any
     users : any[]
     sectors: any []
 }

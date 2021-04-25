@@ -48,6 +48,10 @@ import { DoctorProfileComponent } from './medical/doctorsList/doctor-profile/doc
 import { FolderIdComponent } from './medical/folder-id/folder-id.component';
 import { SchedulerModule } from '@progress/kendo-angular-scheduler';
 import { TreeViewModule } from '@progress/kendo-angular-treeview';
+import { AppointmentPatientComponent } from './medical/appointment-patient/appointment-patient.component';
+import { AddApComponent } from './medical/appointment-patient/add-ap/add-ap.component';
+
+
 
 
 
@@ -97,6 +101,11 @@ import { TreeViewModule } from '@progress/kendo-angular-treeview';
     DoctorsListComponent,
     DoctorProfileComponent,
     FolderIdComponent,
+    AppointmentPatientComponent,
+    AddApComponent,
+   
+   
+    
     
  
    

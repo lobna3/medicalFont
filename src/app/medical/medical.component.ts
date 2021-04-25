@@ -178,7 +178,7 @@ export class MedicalComponent implements OnInit {
     },  {
       nom :  'Appointments',
       icon : 'fa fa-calendar',
-      route : '/medical/appointments'
+      route : '/medical/appointment-patient'
     }, 
     {
       nom :  'Email',
