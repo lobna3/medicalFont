@@ -174,7 +174,7 @@ export class MedicalComponent implements OnInit {
     {
       nom :  'Folders',
       icon : 'fa fa-cube',
-      route : '/medical/folder-id'
+      route : '/medical/folder-id/'+this.user.id
     },  {
       nom :  'Appointments',
       icon : 'fa fa-calendar',

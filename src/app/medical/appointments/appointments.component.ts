@@ -18,7 +18,7 @@ export class AppointmentsComponent implements OnInit {
     this.allAppointments();
   }
   allAppointments() {
-    this.api.getAll()
+    this.api.getByIdD()
       .subscribe((result: Appointment[]) => {
         this.appointments= result
         console.log(result)

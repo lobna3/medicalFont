@@ -10,13 +10,18 @@ import { User } from 'src/app/viewModels/user';
   styleUrls: ['./folder-id.component.css']
 })
 export class FolderIdComponent implements OnInit {
-  user: User = new User();
+  user =JSON.parse(localStorage.getItem('user'))
   patients: User
   id=this.route.snapshot.params['id']
   constructor(private route:ActivatedRoute,private toastr: ToastrService, private router: Router, private api: CrudService) { }
   server="http://localhost/blog/storage/app/"
   ngOnInit(): void {
-    this.getIdDocors(this.id);
+    if(this.user.id==this.id){
+      this.getIdDocors(this.id);
+    }
+   else {
+     this.router.navigate(['/medical'])
+   }
   }
   getIdDocors(id){
     this.api.getByIdP(id)

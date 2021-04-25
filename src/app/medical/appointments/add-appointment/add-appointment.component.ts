@@ -15,7 +15,9 @@ import { CrudService } from 'src/app/apis/crud.service';
   styleUrls: ['./add-appointment.component.css']
 })
 export class AddAppointmentComponent implements OnInit {
+  auth=JSON.parse(localStorage.getItem('user'))
   appointment: Appointment =new Appointment();
+ 
   user: User[]
   users: User[]
   sector: Sector[]
@@ -24,6 +26,7 @@ export class AddAppointmentComponent implements OnInit {
     private orgapi:OrganisationService,private apii:AuthService,private apiii:CrudService) { }
 
   ngOnInit(): void {
+    this.appointment.doctor_id=this.auth.id;
     this.orgapi.getAllS().subscribe((result:Sector[])=>{
       this.sector= result
     })
@@ -35,32 +38,47 @@ export class AddAppointmentComponent implements OnInit {
     })
 
     this.form=new FormGroup({
-
-      'appointment_time': new FormControl(Validators.required),
-      'appointment_date': new FormControl(),
     
-      'doctor_id': new FormControl(Validators.required),
-      'patient_id': new FormControl(Validators.required),
+      'appointment_time': new FormControl('',Validators.required),
+      'appointment_date': new FormControl(''),
+    
+      'doctor_id': new FormControl(this.auth.id,Validators.required),
+      'patient_id': new FormControl('',Validators.required),
       
-      'sector_id': new FormControl(),
-      'id': new FormControl(),
+      'note': new FormControl(''),
+       
+      'phone': new FormControl(''),
+      'id': new FormControl(''),
       
      
       
     });
+
   }
 
   addA(){
-    this.api.create(this.appointment)
+    this.api.create(this.form.value)
     .subscribe((result : any)=>{
       console.log(result) 
       this.toastr.success('Hello world!', 'Appointments Create!');
-     this.router.navigate(['/medical']);
+     this.router.navigate(['/medical/appointments']);
     },(error:any)=>{
       console.log(error)
       this.toastr.error(error.error.msg);
     })
   
+  }
+  selectPatient(event){
+    let id= event.target.value;
+    let patient= this.users.find((p)=>p.id==id)
+    console.log(patient)
+    if(patient){
+   
+      this.appointment.phone=patient.phone
+      this.form.get('phone').setValue(patient.phone)
+      console.log(this.form.value);
+      
+    }
   }
 
 }

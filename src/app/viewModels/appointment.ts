@@ -5,8 +5,9 @@ export class Appointment {
     patient_id:number;
     doctor_id:number;
     sector_id: number;
-    message: string;
-
+    note: string;
+    phone: string;
+    doctor : any
     users : any[]
     sectors: any []
 }

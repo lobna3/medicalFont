@@ -7,7 +7,7 @@ import {Appointment} from 'src/app/viewModels/appointment';
 })
 export class AppointmentsService {
   url="http://localhost/blog/public/api";
-
+  user =JSON.parse(localStorage.getItem('user'))
   constructor(private httpclient:HttpClient) { }
 
 create(body:Appointment){
@@ -26,5 +26,10 @@ delete(id){
 }
 getById(id){
   return this.httpclient.get(this.url+'/appointments/'+id)
+}
+
+getByIdD(){
+  console.log(this.user.id)
+  return this.httpclient.get(this.url+'/appointmentsd/'+this.user.id)
 }
 }

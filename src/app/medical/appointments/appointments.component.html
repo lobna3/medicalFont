@@ -30,10 +30,15 @@
                             <tbody>
                                 <tr *ngFor="let item of appointments">
                                     <td>APT0001 {{item.id}}</td>
-                                    <td><img width="28" height="28" src="assets/img/user.jpg" class="rounded-circle m-r-5" alt=""> Denise Stevens</td>
+                                    <td><img width="28" height="28" src="assets/img/user.jpg" class="rounded-circle m-r-5" alt=""> </td>
                                     <td>35</td>
-                                    <td>Henry Daniels</td>
-                                    <td>Cardiology</td>
+                                    <td>{{item.doctor?.user?.firstname}}</td>
+                                    <td>
+                                        <span *ngFor="let s of item.doctor.specialites">
+                                                {{s.nomspecialite}}
+                                        </span>
+                                        
+                                        </td>
                                     <td>{{item.appointment_date}}</td>
                                     <td> {{item.appointment_time}}</td>
                                     
