@@ -43,6 +43,7 @@ import { DoctorProfileComponent } from './medical/doctorsList/doctor-profile/doc
 import { FolderIdComponent } from './medical/folder-id/folder-id.component';
 import { AppointmentPatientComponent } from './medical/appointment-patient/appointment-patient.component';
 import { AddApComponent } from './medical/appointment-patient/add-ap/add-ap.component';
+import { AgendaComponent } from './medical/agenda/agenda.component';
 
 
 
@@ -227,6 +228,14 @@ const routes: Routes = [
          { 
           path:'add-ap',
           component:AddApComponent, 
+         },
+         { 
+          path:'edit-ap/:id',
+          component:AddApComponent, 
+         },
+         { 
+          path:'agenda',
+          component:AgendaComponent, 
          },
       
     ]

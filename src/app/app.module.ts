@@ -50,6 +50,7 @@ import { SchedulerModule } from '@progress/kendo-angular-scheduler';
 import { TreeViewModule } from '@progress/kendo-angular-treeview';
 import { AppointmentPatientComponent } from './medical/appointment-patient/appointment-patient.component';
 import { AddApComponent } from './medical/appointment-patient/add-ap/add-ap.component';
+import { AgendaComponent } from './medical/agenda/agenda.component';
 
 
 
@@ -103,6 +104,7 @@ import { AddApComponent } from './medical/appointment-patient/add-ap/add-ap.comp
     FolderIdComponent,
     AppointmentPatientComponent,
     AddApComponent,
+    AgendaComponent,
    
    
     

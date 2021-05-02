@@ -105,7 +105,13 @@ export class MedicalComponent implements OnInit {
       nom :  'Appointments',
       icon : 'fa fa-calendar',
       route : '/medical/appointments'
-    },   {
+    },  
+    {
+      nom :  'Agenda',
+      icon : 'fa fa-calendar',
+      route : '/medical/agenda'
+    }, 
+     {
       nom :  'Email',
       icon : 'fa fa-envelope',
       route : '/email/inbox'

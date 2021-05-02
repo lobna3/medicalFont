@@ -1,0 +1,26 @@
+<div class="page-wrapper">
+    <div class="content">
+        <div class="row">
+            <div class="col-sm-4 col-3">
+                <h4 class="page-title">Agenda</h4>
+            </div>
+            <div class="col-sm-8 col-9 text-right m-b-20">
+                <a [routerLink]="['/medical/add-appointment']" class="btn btn btn-primary btn-rounded float-right"><i
+                        class="fa fa-plus"></i> Add Appointment</a>
+            </div>
+        </div>
+        <div class="row">
+ 
+            <div class="col-md-12" *ngIf="events">
+                <kendo-scheduler [kendoSchedulerBinding]="events"
+                         [selectedDate]="selectedDate"
+                         style="height: 600px;">
+            <kendo-scheduler-week-view startTime="07:00" >
+            </kendo-scheduler-week-view>
+            <kendo-scheduler-day-view startTime="07:00">
+            </kendo-scheduler-day-view>
+        </kendo-scheduler>
+            </div>
+        </div>
+    </div>
+</div>
