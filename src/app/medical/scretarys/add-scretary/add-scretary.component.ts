@@ -54,8 +54,8 @@ export class AddScretaryComponent implements OnInit {
           this.api.createS(this.user)
           .subscribe((result : any)=>{
             console.log(result) 
-            this.toastr.success('Create Scretary', 'Scretary Create!');
-           this.router.navigate(['/doctors']);
+            this.toastr.success('Create Scretary', 'Scretary Created!');
+           this.router.navigate(['/medical/doctors']);
           },(error:any)=>{
             console.log(error)
             this.toastr.error(error.error.msg);

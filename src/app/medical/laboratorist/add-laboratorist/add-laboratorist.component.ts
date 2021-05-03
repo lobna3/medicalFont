@@ -43,8 +43,8 @@ export class AddLaboratoristComponent implements OnInit {
             this.api.createL(this.user)
             .subscribe((result : any)=>{
               console.log(result) 
-              this.toastr.success('Create Laboratorist', 'Laboratorist Create!');
-             this.router.navigate(['/doctors']);
+              this.toastr.success('Create Laboratorist', 'Laboratorist Created!');
+             this.router.navigate(['/medical/doctors']);
             },(error:any)=>{
               console.log(error)
               this.toastr.error(error.error.msg);

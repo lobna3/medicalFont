@@ -29,7 +29,7 @@
                             <tr *ngFor="let item of appointments">
                                 <td>APT0001 {{item.id}}</td>
                                 <td><img width="28" height="28" src="assets/img/user.jpg" class="rounded-circle m-r-5" alt=""> {{item.doctor?.user?.lastname}}</td>
-                                <td>35</td>
+                                <td>{{item.doctor?.user?.datenaissance}}</td>
                                 <td>{{item.doctor?.user?.firstname}} {{item.doctor?.user?.lastname}}</td>
                                 <td>
                                     <span *ngFor="let s of item.doctor.specialites">

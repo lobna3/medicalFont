@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
     .subscribe((result : any)=>{
       console.log(result) 
       localStorage.setItem("user", JSON.stringify(result))
-      this.toastr.success('Hello world!', 'Toastr fun!');
+      this.toastr.success('Hello world!', 'connexion successful!');
      this.router.navigate(['/medical']);
     },(error:any)=>{
       console.log(error)

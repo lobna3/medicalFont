@@ -28,7 +28,7 @@ export class AddSpecialiteComponent implements OnInit {
     this.api.create(this.specialite)
     .subscribe((result : any)=>{
       console.log(result) 
-      this.toastr.success('Create Specialite', 'specialite Create!');
+      this.toastr.success('Create Specialite', 'specialite Created!');
      this.router.navigate(['/medical']);
     },(error:any)=>{
       console.log(error)
