@@ -55,7 +55,7 @@ export class AddDoctorComponent implements OnInit {
           .subscribe((result : any)=>{
             console.log(result) 
             this.toastr.success('Create Doctor', 'Doctor Create!');
-           this.router.navigate(['/medical//doctors']);
+           this.router.navigate(['/medical/doctors']);
           },(error:any)=>{
             console.log(error)
             this.toastr.error(error.error.msg);

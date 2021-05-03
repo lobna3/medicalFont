@@ -17,6 +17,8 @@ export class PatientsListComponent implements OnInit {
   ngOnInit(): void {
     this.allPatient();
   } 
+  
+  server="http://localhost/blog/storage/app/"
 
   allPatient(){
     this.api.getAllP()

@@ -37,16 +37,45 @@ export class AddPatientComponent implements OnInit {
   }
 
   createPatient(){
-    this.api.createP(this.user)
-    .subscribe((result : any)=>{
-      console.log(result) 
-      this.toastr.success('Create Patient!', 'Patient fun!');
-     this.router.navigate(['/patients-list']);
-    },(error:any)=>{
-      console.log(error)
-      this.toastr.error(error.error.msg);
-    })
+    if(this.formData){
+      this.api.upload(this.formData).subscribe((result : any)=>
+      {
+        console.log(result)
+        this.user.image = result.path
+        this.api.createP(this.user)
+        .subscribe((result : any)=>{
+          console.log(result) 
+          this.toastr.success('Create Patient', 'Patient Created!');
+         this.router.navigate(['/medical/patients']);
+        },(error:any)=>{
+          console.log(error)
+          this.toastr.error(error.error.msg);
+        }) 
+      })
   
+    }
+    else{
+      this.api.createP(this.user)
+      .subscribe((result : any)=>{
+        console.log(result) 
+        this.toastr.success('Create Patient!', 'Patient fun!');
+       this.router.navigate(['/medical/patients']);
+      },(error:any)=>{
+        console.log(error)
+        this.toastr.error(error.error.msg);
+      })
+    
+    }
+   
   }
-
+  formData = new FormData()
+  upload(event){
+  let files = event.target.files
+    if(files && files.length >0){
+      let file= files[0];
+      
+      this.formData.append('avatar' , file , file.name)
+     
+    }
+  }
 }
