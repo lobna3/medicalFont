@@ -37,8 +37,8 @@ createS(body:Sector){
  }
 
  updateS(body:Sector){
-  return this.httpclient.put(this.url+'/edit-sector/',body);
- }
+  return this.httpclient.put(this.url+'/edit-sector',body)
+}
 
  deleteS(id){
   return this.httpclient.delete(this.url+'/sectors/'+id)

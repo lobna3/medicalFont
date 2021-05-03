@@ -171,7 +171,7 @@ const routes: Routes = [
         component:AddSectorComponent, 
        },
        {
-        path:'edit-sector',
+        path:'edit-sector/:id',
         component:EditSectorComponent, 
        },
 

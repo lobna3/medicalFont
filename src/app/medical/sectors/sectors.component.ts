@@ -40,7 +40,7 @@ export class SectorsComponent implements OnInit {
       cancelButtonText: 'No, keep it'
     }).then((result) => {
       if (result.value) {
-        this.api.delete(id)
+        this.api.deleteS(id)
           .subscribe((result: any) => {
             console.log(result)
             this.allSSectors()

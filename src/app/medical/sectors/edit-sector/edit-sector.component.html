@@ -7,18 +7,18 @@
         </div>
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
-                <form>
+                <form [formGroup]="form">
                     <div class="form-group">
                         <label>Department Name</label>
-                        <input class="form-control" type="text" value="Dentists">
+                        <input class="form-control" type="text" formControlName="designation">
                     </div>
                     <div class="form-group">
                         <label>Description</label>
-                        <textarea cols="30" rows="4" class="form-control"></textarea>
+                        <textarea cols="30" rows="4" class="form-control" formControlName="description"></textarea>
                     </div>
                    
                     <div class="m-t-20 text-center">
-                        <button class="btn btn-primary submit-btn">Save Department</button>
+                        <button class="btn btn-primary submit-btn" (click)=" updateSector()" [disabled]="!form.valid">Save Department</button>
                     </div>
                 </form>
             </div>

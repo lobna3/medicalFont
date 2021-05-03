@@ -61,24 +61,12 @@ export class MedicalComponent implements OnInit {
       icon : 'fa fa-user',
       route : '/medical/scretarys'
     },
-    {
-      nom :  'Patients',
-      icon : 'fa fa-wheelchair',
-      route : '/medical/patients'
-    }, 
+    
      {
       nom :  'Specialites',
       icon : 'fa fa-cube',
       route : '/medical/specialites'
-    },  {
-      nom :  'Folders',
-      icon : 'fa fa-cube',
-      route : '/medical/folders'
-    },  {
-      nom :  'Appointments',
-      icon : 'fa fa-calendar',
-      route : '/medical/appointments'
-    }, {
+    },    {
       nom :  'Sectors',
       icon : 'fa fa-hospital-o',
       route : '/medical/sectors'
@@ -159,7 +147,13 @@ export class MedicalComponent implements OnInit {
       nom :  'Appointments',
       icon : 'fa fa-calendar',
       route : '/medical/appointments'
-    },   {
+    },  
+    {
+      nom :  'Patients',
+      icon : 'fa fa-wheelchair',
+      route : '/medical/patients'
+    }, 
+     {
       nom :  'Email',
       icon : 'fa fa-envelope',
       route : '/email/inbox'
