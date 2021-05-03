@@ -69,6 +69,7 @@
                                             {{(item.size / 1024) | number}} KB
                                         </ng-template>
                                         <button type="button" class="btn btn-white" (click)="showModal(item)"><i class="fa fa-share"></i> </button>
+                                        <button type="button" class="btn btn-white" (click)="deleteDocuments(item.id)"><i class="fa fa-trash-o m-r-5"></i> </button>
                                         </div>
                                 </div>
                             </li>

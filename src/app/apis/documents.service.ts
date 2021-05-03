@@ -33,5 +33,7 @@ getAllPatient(id){
 update(body){
   return this.httpclient.put(this.url+'/edit-document',body)
 }
-
+delete(id){
+  return this.httpclient.delete(this.url+'/documents/'+id)
+}
 }
