@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CrudService } from 'src/app/apis/crud.service';
 import { User } from 'src/app/viewModels/user';
@@ -12,10 +12,21 @@ import { User } from 'src/app/viewModels/user';
 export class EditPatientComponent implements OnInit {
   
   user:User= JSON.parse(localStorage.getItem('user'));
+  patient: User =new User();
   form:FormGroup
-  constructor(private toastr: ToastrService, private router:Router,private api:CrudService) { }
-
+  constructor(private toastr: ToastrService, private router:Router,private api:CrudService,private route:ActivatedRoute) { }
+  id=this.route.snapshot.params['id']
   ngOnInit(): void {
+    console.log(this.id)
+   
+    if(this.id){
+      this.api.getByIdP(this.id).subscribe((res: User)=>{
+
+        this.form.patchValue(res)
+        console.log(res)
+      })
+    }
+   
     this.form=new FormGroup({
       'firstname': new FormControl(Validators.required),
       'lastname': new FormControl(),
@@ -32,23 +43,24 @@ export class EditPatientComponent implements OnInit {
      
       'n_cnss': new FormControl(),
       'role': new FormControl(),
-     
+     'patient_id':new FormControl(),
       
     });
   
   }
 
   editPatient(){
+    if(this.id){
     this.api.updateP(this.user)
     .subscribe((result : any)=>{
       console.log(result) 
       this.toastr.success(' Update Patient ', 'Patient Update!');
-      localStorage.setItem('user' , JSON.stringify(result))
-    
+      
     },(error:any)=>{
       console.log(error)
       this.toastr.error(error.error.msg);
     })
+  }
   
   }
 

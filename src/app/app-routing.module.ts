@@ -132,7 +132,7 @@ const routes: Routes = [
       
        
         {
-       path:'edit-patient',
+       path:'edit-patient/:id',
        component: EditPatientComponent
         },
       {
