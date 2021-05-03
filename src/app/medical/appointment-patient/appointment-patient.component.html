@@ -16,7 +16,7 @@
                             <tr>
                                 <th>Appointment ID</th>
                                 <th>Patient Name</th>
-                                <th>Age</th>
+                                <th>Date of birth</th>
                                 <th>Doctor Name</th>
                                 <th>Department</th>
                                 <th>Appointment Date</th>
@@ -28,8 +28,8 @@
                         <tbody>
                             <tr *ngFor="let item of appointments">
                                 <td>APT0001 {{item.id}}</td>
-                                <td><img width="28" height="28" src="assets/img/user.jpg" class="rounded-circle m-r-5" alt=""> {{item.doctor?.user?.lastname}}</td>
-                                <td>{{item.doctor?.user?.datenaissance}}</td>
+                                <td><img width="28" height="28" [src]=" item.patient?.user?.image? server+item.patient?.user?.image : 'assets/img/user.jpg'" class="rounded-circle m-r-5" alt=""> {{item.patient?.user?.lastname}} {{item.patient?.user?.firstname}}</td>
+                                <td>{{item.patient?.user?.datenaissance}}</td>
                                 <td>{{item.doctor?.user?.firstname}} {{item.doctor?.user?.lastname}}</td>
                                 <td>
                                     <span *ngFor="let s of item.doctor.specialites">
