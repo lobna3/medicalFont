@@ -21,7 +21,7 @@ export class AppointmentsComponent implements OnInit {
   allAppointments() {
     this.api.getByIdD()
       .subscribe((result: Appointment[]) => {
-        this.appointments= result
+        this.appointments= result.sort((a,b)=> new Date(a.appointment_date) < new Date(b.appointment_date) ? 0 : -1)
         console.log(result)
       }, (error: any) => {
         console.log(error)

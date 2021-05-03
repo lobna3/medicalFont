@@ -129,6 +129,8 @@ const routes: Routes = [
       path:'add-patient',
       component: AddPatientComponent
        },
+      
+       
         {
        path:'edit-patient',
        component: EditPatientComponent
