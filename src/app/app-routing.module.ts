@@ -198,7 +198,7 @@ const routes: Routes = [
    { path:'add-specialite',
    component:AddSpecialiteComponent, 
   },
-  { path:'edit-specialite',
+  { path:'edit-specialite/:id',
   component:EditSpecialiteComponent, 
  },
      
