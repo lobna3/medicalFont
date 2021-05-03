@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { AppointmentsService } from 'src/app/apis/appointments.service';
@@ -23,9 +23,18 @@ export class AddAppointmentComponent implements OnInit {
   sector: Sector[]
   form:FormGroup
   constructor(private toastr: ToastrService, private router:Router,private api:AppointmentsService, 
-    private orgapi:OrganisationService,private apii:AuthService,private apiii:CrudService) { }
-
+    private orgapi:OrganisationService,private apii:AuthService,private apiii:CrudService,private route:ActivatedRoute) { }
+    id=this.route.snapshot.params['id']
   ngOnInit(): void {
+    console.log(this.id)
+   
+    if(this.id){
+      this.api.getById(this.id).subscribe((res: Appointment)=>{
+
+        this.form.patchValue(res)
+        console.log(res)
+      })
+    }
     this.appointment.doctor_id=this.auth.id;
     this.orgapi.getAllS().subscribe((result:Sector[])=>{
       this.sector= result
@@ -57,15 +66,29 @@ export class AddAppointmentComponent implements OnInit {
   }
 
   addA(){
-    this.api.create(this.form.value)
+    if(this.id){
+      this.api.update(this.form.value)
     .subscribe((result : any)=>{
       console.log(result) 
-      this.toastr.success('Hello world!', 'Appointments Create!');
+      this.toastr.success('Hello world!', 'Appointments updated!');
      this.router.navigate(['/medical/appointments']);
     },(error:any)=>{
       console.log(error)
       this.toastr.error(error.error.msg);
     })
+    }
+    else{
+      this.api.create(this.form.value)
+      .subscribe((result : any)=>{
+        console.log(result) 
+        this.toastr.success('Hello world!', 'Appointments Create!');
+       this.router.navigate(['/medical/appointments']);
+      },(error:any)=>{
+        console.log(error)
+        this.toastr.error(error.error.msg);
+      })
+    }
+   
   
   }
   selectPatient(event){

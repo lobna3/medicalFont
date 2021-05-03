@@ -144,6 +144,11 @@ const routes: Routes = [
         component: AddAppointmentComponent
         
       },
+      {
+        path:'edit-appointment/:id',
+        component: AddAppointmentComponent
+        
+      },
 
       {
         path:'edit-appointment',

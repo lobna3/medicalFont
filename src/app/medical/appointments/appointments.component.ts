@@ -17,6 +17,7 @@ export class AppointmentsComponent implements OnInit {
   ngOnInit(): void {
     this.allAppointments();
   }
+  server="http://localhost/blog/storage/app/"
   allAppointments() {
     this.api.getByIdD()
       .subscribe((result: Appointment[]) => {
