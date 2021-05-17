@@ -50,7 +50,7 @@ import { AgendaComponent } from './medical/agenda/agenda.component';
 
 const routes: Routes = [
   {
-    path:'',
+    path:'home',
     component:HomeComponent
   },
   {
