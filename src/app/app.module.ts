@@ -59,6 +59,7 @@ import { AgendaComponent } from './medical/agenda/agenda.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -105,6 +106,7 @@ import { AgendaComponent } from './medical/agenda/agenda.component';
     AppointmentPatientComponent,
     AddApComponent,
     AgendaComponent,
+   
    
    
     
